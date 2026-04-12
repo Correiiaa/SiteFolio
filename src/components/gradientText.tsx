@@ -111,17 +111,17 @@ export default function gradientText({
 	};
 
 	return (
-		<motion.div
+		<motion.span
 			className={`relative flex-row items-center justify-center rounded-[1.25rem] font-medium backdrop-blur transition-shadow duration-500 overflow-hidden cursor-pointer ${showBorder ? "py-1 px-2" : ""} ${className}`}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 		>
 			{showBorder && (
-				<motion.div
+				<motion.span
 					className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem]"
 					style={{ ...gradientStyle, backgroundPosition }}
 				>
-					<div
+					<span
 						className="absolute bg-black rounded-[1.25rem] z-[-1]"
 						style={{
 							width: "calc(100% - 2px)",
@@ -131,9 +131,9 @@ export default function gradientText({
 							transform: "translate(-50%, -50%)",
 						}}
 					/>
-				</motion.div>
+				</motion.span>
 			)}
-			<motion.div
+			<motion.span
 				className="inline-block relative z-2 text-transparent bg-clip-text"
 				style={{
 					...gradientStyle,
@@ -142,7 +142,7 @@ export default function gradientText({
 				}}
 			>
 				{children}
-			</motion.div>
-		</motion.div>
+			</motion.span>
+		</motion.span>
 	);
 }
