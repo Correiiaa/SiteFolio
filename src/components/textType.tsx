@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { BioComponent } from "./bioComponent";
 
 type Props = {
 	strings: string[];
@@ -60,13 +61,16 @@ export default function TextType({
 	}, [idx, loop, strings]);
 
 	return (
-		<span
-			style={{ fontFamily: "Consolas, Monaco, monospace" }}
-			aria-live="polite"
-			className="text-type inline-flex items-center font-console text-2xl"
-		>
-			<span>{text}</span>
-			<span className="text-type-caret ml-1">|</span>
-		</span>
+		<main>
+			<span
+				style={{ fontFamily: "Consolas, Monaco, monospace" }}
+				aria-live="polite"
+				className="text-type inline-flex items-center font-console text-2xl"
+			>
+				<span>{text}</span>
+				<span className="text-type-caret ml-1">|</span>
+			</span>
+			<BioComponent />
+		</main>
 	);
 }
