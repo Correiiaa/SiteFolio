@@ -1,0 +1,14 @@
+{
+  "bio": {
+    "devFullStack": "Full Stack Developer",
+    "devFullStackbio": "fullstack developer",
+    "helloImAm": "Hi! I'm a",
+    "inLoveWith": "passionate about building innovative and efficient solutions."
+  },
+  "nav": {
+    "Projects": "Projects",
+    "Contact": "Contact",
+    "About": "About",
+    "Skills": "Skills"
+  }
+}
