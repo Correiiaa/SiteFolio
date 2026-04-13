@@ -3,6 +3,8 @@
 import Image from "next/image";
 import GradientText from "./gradientText";
 import { useTranslation } from "react-i18next";
+import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const BioComponent = () => {
   const { t } = useTranslation();
@@ -21,13 +23,13 @@ export const BioComponent = () => {
         </div>
 
         {/* Content on the right (expands) */}
-        <div className="flex-1 text-center md:text-left md:pl-5">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 animate-fade-in mx-auto md:mx-0">
+        <div className="flex-1  text-center md:text-left md:pl-5">
+          {/*<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 animate-fade-in mx-auto md:mx-0">
             <div className="w-2 h-2 rounded-full animate-pulse bg-white"></div>
             <span className="text-sm font-medium text-primary">
               {t("bio.devFullStack")}
             </span>
-          </div>
+          </div>*/}
 
           <h1 className="text-4xl font-bold mb-4 text-center md:text-left">
             <GradientText
@@ -47,6 +49,17 @@ export const BioComponent = () => {
             </GradientText>{" "}
             {t("bio.inLoveWith")}
           </p>
+          <div className="redes py-8 flex flex-row items-center gap-4 mt-6 md:mt-0">
+            <button className="projects bg-fuchsia-950 w-3/7 h-16 rounded-2xl border border-white">
+              <span className="text-base font-medium text-primary ">
+                {t("bio.myProjects")}
+              </span>
+              <FontAwesomeIcon
+                icon={faDiagramProject}
+                className="text-base pl-4"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </main>
