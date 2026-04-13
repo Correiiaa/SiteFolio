@@ -40,7 +40,7 @@ export const BioComponent = () => {
             </GradientText>
           </h1>
 
-          <p className="text-2xl text-gray-300 text-center md:text-left">
+          <p className="text-2xl text-white text-center md:text-left">
             {t("bio.helloImAm")}{" "}
             <GradientText colors={["#5227FF", "#FF9FFC"]}>
               {t("bio.devFullStackbio")}

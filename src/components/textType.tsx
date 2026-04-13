@@ -61,7 +61,7 @@ export default function TextType({
   }, [idx, loop, strings]);
 
   return (
-    <main>
+    <main className="bg-transparent">
       <span
         style={{ fontFamily: "Consolas, Monaco, monospace" }}
         aria-live="polite"

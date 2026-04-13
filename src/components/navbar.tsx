@@ -4,22 +4,17 @@ import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGripLines, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
-import i18n, { applyClientLocale } from "@/i18n";
+import i18n from "@/i18n";
 
 export const Navbar = () => {
   const { t } = useTranslation();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState<string>(i18n.language || "en-US");
-  const [version, setVersion] = useState(0);
 
   useEffect(() => {
-    // aplicar locale armazenado / navigator após a hidratação
-    applyClientLocale();
-
     const handle = (lng: string) => {
       setLang(lng || "en-US");
-      setVersion((v) => v + 1);
     };
 
     i18n.on("languageChanged", handle);
@@ -35,7 +30,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="w-full h-16 bg-black text-white relative">
+    <header className="relative z-20 h-16 w-full bg-transparent text-white">
       <div className="max-w-5xl w-full mx-auto px-6 flex items-center justify-between h-16">
         <div
           className="text-lg font-bold cursor-pointer flex flex-row items-center gap-4"
@@ -48,20 +43,11 @@ export const Navbar = () => {
               value={lang}
               onChange={async (e) => {
                 const next = e.target.value;
-                try {
-                  await i18n.changeLanguage(next);
-                } catch (err) {
-                  // ignore
-                }
-                try {
-                  window.localStorage.setItem("i18nextLng", next);
-                  // set cookie so server can read it on next request
-                  document.cookie = `i18nextLng=${next}; path=/; max-age=${60 * 60 * 24 * 365}`;
-                } catch (err) {
-                  /* ignore */
-                }
-                // setLang will also be updated via languageChanged handler, but set immediately to keep UI responsive
+                await i18n.changeLanguage(next);
+                window.localStorage.setItem("i18nextLng", next);
+                document.cookie = `i18nextLng=${next}; path=/; max-age=${60 * 60 * 24 * 365}`;
                 setLang(next);
+                router.refresh();
               }}
             >
               <option value="en-US">EN</option>
