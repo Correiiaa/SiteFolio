@@ -3,7 +3,10 @@
 import Image from "next/image";
 import GradientText from "./gradientText";
 import { useTranslation } from "react-i18next";
-import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDiagramProject,
+  faPaperPlane,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const BioComponent = () => {
@@ -24,13 +27,6 @@ export const BioComponent = () => {
 
         {/* Content on the right (expands) */}
         <div className="flex-1  text-center md:text-left md:pl-5">
-          {/*<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 animate-fade-in mx-auto md:mx-0">
-            <div className="w-2 h-2 rounded-full animate-pulse bg-white"></div>
-            <span className="text-sm font-medium text-primary">
-              {t("bio.devFullStack")}
-            </span>
-          </div>*/}
-
           <h1 className="text-4xl font-bold mb-4 text-center md:text-left">
             <GradientText
               colors={["#ffffff", "#3d3d3d"]}
@@ -49,8 +45,8 @@ export const BioComponent = () => {
             </GradientText>{" "}
             {t("bio.inLoveWith")}
           </p>
-          <div className="redes py-8 flex flex-row items-center gap-4 mt-6 md:mt-0">
-            <button className="projects bg-fuchsia-950 w-3/7 h-16 rounded-2xl border border-white">
+          <div className="redes py-8 flex flex-col md:flex-row items-center gap-4 mt-6 md:mt-0">
+            <button className="projects bg-fuchsia-950 w-full md:flex-1 h-16 rounded-4xl focus:ring-white shadow-2xl shadow-white border-2 border-gray-50">
               <span className="text-base font-medium text-primary ">
                 {t("bio.myProjects")}
               </span>
@@ -58,6 +54,13 @@ export const BioComponent = () => {
                 icon={faDiagramProject}
                 className="text-base pl-4"
               />
+            </button>
+
+            <button className="bg-rose-900 w-full md:flex-1 h-16 rounded-4xl focus:ring-white shadow-2xl shadow-white border-2 border-gray-50">
+              <span className="text-base font-medium text-primary ">
+                {t("bio.socialMedia")}
+              </span>
+              <FontAwesomeIcon icon={faPaperPlane} className="text-base pl-4" />
             </button>
           </div>
         </div>
