@@ -30,7 +30,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="relative z-20 h-16 w-full bg-transparent text-white">
+    <header className="relative z-20 h-16 w-full border-b border-white/10 bg-black text-white">
       <div className="max-w-5xl w-full mx-auto px-6 flex items-center justify-between h-16">
         <div
           className="text-lg font-bold cursor-pointer flex flex-row items-center gap-4"

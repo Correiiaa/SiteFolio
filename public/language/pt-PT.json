@@ -12,5 +12,35 @@
     "Contact": "Contato",
     "About": "Sobre",
     "Skills": "Habilidades"
+  },
+  "projects": {
+    "myProjects": "Meus Projetos",
+    "sectionLabel": "Portfólio selecionado",
+    "sectionIntro": "Uma seleção dos projetos que desenvolvi, com foco em produto, interface e integração com hardware e automação.",
+    "viewRepository": "Ver repositório",
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "Loja online moderna com foco em experiência de compra, layout responsivo e base preparada para crescer com novas funcionalidades."
+    },
+    "ecommerceMobile": {
+      "title": "E-commerce Mobile",
+      "description": "Versão mobile do e-commerce pensada para navegação rápida, interface adaptada ao toque e fluxo de compra direto."
+    },
+    "storeManagement": {
+      "title": "Sistema de Gestão de Loja",
+      "description": "Sistema para apoiar operações de loja, organizado para gestão de produtos, processos internos e acompanhamento diário."
+    },
+    "bluetoothCar": {
+      "title": "Carro Bluetooth com ESP32",
+      "description": "Projeto IoT para controlo de um carro robótico via Bluetooth, combinando eletrónica, conectividade e movimento."
+    },
+    "library": {
+      "title": "Biblioteca ESAN",
+      "description": "Aplicação em Python para organização e gestão de uma biblioteca, com foco em estrutura clara e uso prático."
+    },
+    "roboticArm": {
+      "title": "Braço Robótico Bluetooth",
+      "description": "Sistema de controlo de braço robótico por Bluetooth, desenvolvido com foco em precisão, resposta e robótica aplicada."
+    }
   }
 }
